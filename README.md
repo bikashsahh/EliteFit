@@ -136,4 +136,4 @@ Project Link: [https://github.com/bikashsahh/EliteFit](https://github.com/bikash
 
 
 ---
-Made with ❤️ by [Your Name]
+Made with ❤️ by Bikash Sah
