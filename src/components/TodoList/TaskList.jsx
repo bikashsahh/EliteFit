@@ -149,7 +149,7 @@ const TaskList = () => {
                  </Button>
              </Center> */}
 
-        <Flex direction="row" gap="5">
+        <Flex direction="row" gap="3">
           {/* Priority Filter */}
           <Select
             value={priorityFilter}
@@ -186,7 +186,7 @@ const TaskList = () => {
 
           {/* High Priority Column */}
           <GridItem>
-            <Heading size="md" mb="4" color="pink.500">
+            <Heading size="md" mb="4" color="red.500">
               High Priority
             </Heading>
             <Flex direction="column" gap="4">
