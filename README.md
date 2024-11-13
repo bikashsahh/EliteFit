@@ -2,7 +2,6 @@
 
 A modern, intuitive task management application built with React, Redux, and Chakra UI. To-Do Manager helps users efficiently organize their tasks with features like priority sorting, smart search, and progress tracking.
 
-![To-Do Manager Demo](./src/assets/image.png)
 
 ## ✨ Features
 
