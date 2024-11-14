@@ -3,8 +3,7 @@
 A task management application built with React, Redux, and Chakra UI. The ToDo Manager helps users organize tasks by priority, due date, and completion status. Users can add, edit, view, delete, and mark tasks as complete. The application supports task categories like "Upcoming Tasks," "Overdue Tasks," and "Completed Tasks" and provides a visually cohesive and responsive design.
 
 Live Demo :
-    https://vercel.com/bikash-sahs-projects/elitefit
-
+    https://elitefit-six.vercel.app/
 ## ✨ Features
 
 - 📊 **Priority Management**
