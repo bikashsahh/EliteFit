@@ -125,7 +125,7 @@ const TaskList = () => {
   return (
     <Box m="auto" py="2" mx="2">
       <Flex direction="row" justify="space-between" mb="4" width="100%">
-        <InputGroup width="200px" mr="2">
+        <InputGroup width="auto" mr="1">
           <InputLeftElement pointerEvents="none">
             <FaSearch color="gray.500" />
           </InputLeftElement>
@@ -149,14 +149,15 @@ const TaskList = () => {
                  </Button>
              </Center> */}
 
-        <Flex direction="row" gap="3">
+        <Flex direction="row">
           {/* Priority Filter */}
           <Select
             value={priorityFilter}
             onChange={(e) => setPriorityFilter(e.target.value)}
             placeholder="Filter by Priority"
             borderColor="gray.300"
-            width="150px"
+            width="auto"
+            mr={1}
           >
             <option value="high">High</option>
             <option value="medium">Medium</option>
@@ -169,7 +170,7 @@ const TaskList = () => {
             onChange={(e) => setCompletionFilter(e.target.value)}
             placeholder="Filter by Status"
             borderColor="gray.300"
-            width="150px"
+            width="auto"
           >
             <option value="completed">Completed</option>
             <option value="not_completed">Not Completed</option>

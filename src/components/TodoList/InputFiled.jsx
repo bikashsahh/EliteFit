@@ -69,7 +69,7 @@ const InputFiled = () => {
             bgGradient: "linear(to-br, #D90770, #F15B2A)",
             transform: "scale(1.05)",
           }}
-          w="30%"
+          w="45%"
           onClick={onOpen}
         >
           Create Tasks
