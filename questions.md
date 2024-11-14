@@ -1,6 +1,6 @@
 # Technical Interview Responses
 
-## How long did you spend on the coding test? 
+## 1.How long did you spend on the coding test? 
 
 I spent approximately 7-8 hours on the coding test. This time was allocated to:
 - Planning the project structure
@@ -9,7 +9,7 @@ I spent approximately 7-8 hours on the coding test. This time was allocated to:
 - Creating maintainable and clean code
 - Making the user interface attractive and friendly
 
-## What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
+## 2.What was the most useful feature that was added to the latest version of your chosen language? Please include a snippet of code that shows how you've used it.
 
 The most useful recent feature in React is the useTransition hook, introduced in React 18. It allows for smooth transitions in UI updates by enabling concurrent rendering, which makes the app feel more responsive. This is especially helpful when handling actions that trigger state updates, like filtering or sorting large lists, as it helps prioritize urgent updates over less critical ones.
 
@@ -64,7 +64,7 @@ In this example, useTransition improves the user experience by handling the filt
 
 This feature was extensively utilized in the task manager for safe property access, improving both code readability and maintenance.
 
-## How would you track down a performance issue in production? Have you ever had to do this?
+## 3.How would you track down a performance issue in production? Have you ever had to do this?
 
 For tracking performance issues in React applications, I employ several key tools:
 
@@ -85,7 +85,7 @@ For tracking performance issues in React applications, I employ several key tool
 
 This approach has proven effective in identifying and resolving React-specific performance bottlenecks.
 
-## If you had more time, what additional features or improvements would you consider adding to the task management application?
+## 4.If you had more time, what additional features or improvements would you consider adding to the task management application?
 
 Given additional development time, these features would enhance the task management application:
 
