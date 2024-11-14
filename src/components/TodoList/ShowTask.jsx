@@ -16,6 +16,7 @@ import {
   Input,
   Select,
   useColorMode,
+  useToast,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { taskAction } from "../../redux-store/todoSlice";
@@ -24,6 +25,7 @@ export const ShowTask = (props) => {
   const { colorMode } = useColorMode();
   const dispatch = useDispatch();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const toast = useToast();
 
   // State to store edited values
   const [title, setTitle] = React.useState(props.title);
@@ -33,9 +35,14 @@ export const ShowTask = (props) => {
 
   // Handlers for editing the task
   const deleteHandler = () => {
-    console.log("dek");
-    console.log(props.id, " ", props.priority);
     dispatch(taskAction.deleteTask({ id: props.id, priority: props.priority }));
+    toast({
+      title: "Task deleted.",
+      description: "The task has been successfully deleted.",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
   };
 
   const saveHandler = () => {
@@ -48,6 +55,13 @@ export const ShowTask = (props) => {
         priority,
       })
     );
+    toast({
+      title: "Task updated.",
+      description: "The task has been successfully updated.",
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+    });
     onClose();
   };
 
@@ -199,10 +213,6 @@ export const ShowTask = (props) => {
 
           <ModalFooter>
             <Button
-              //    bgGradient="linear(to-br, #E80A89, #F15B2A)"
-              //    color="white"
-              //    _hover={{ bgGradient: "linear(to-r, #2B6CB0, #4299E1)", transform: "scale(1.05)" }}
-              //    mr={3}
               bgGradient="linear(to-br, #E80A89, #F15B2A)"
               color="white"
               _hover={{
