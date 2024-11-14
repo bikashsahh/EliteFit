@@ -2,7 +2,7 @@
 
 ## 1.How long did you spend on the coding test? 
 
-I spent approximately 7-8 hours on the coding test. This time was allocated to:
+I spent approximately 10-12 hours on the coding test. This time was allocated to:
 - Planning the project structure
 - Implementing efficient state management
 - Ensuring responsive design
