@@ -17,6 +17,12 @@ import {
   Select,
   useColorMode,
   useToast,
+  AlertDialog,
+  AlertDialogOverlay,
+  AlertDialogContent,
+  AlertDialogHeader,
+  AlertDialogBody,
+  AlertDialogFooter,
 } from "@chakra-ui/react";
 import { useDispatch } from "react-redux";
 import { taskAction } from "../../redux-store/todoSlice";
@@ -33,8 +39,25 @@ export const ShowTask = (props) => {
   const [dueDate, setDueDate] = React.useState(props.dueDate);
   const [priority, setPriority] = React.useState(props.priority);
 
-  // Handlers for editing the task
+  // State and handlers for delete confirmation dialog
+  const {
+    isOpen: isConfirmOpen,
+    onOpen: onConfirmOpen,
+    onClose: onConfirmClose,
+  } = useDisclosure();
+  const cancelRef = React.useRef();
+
   const deleteHandler = () => {
+    // Open the confirmation dialog only if the task is not completed
+    if (props.priority !== "done") {
+      onConfirmOpen();
+    } else {
+      // Directly delete if task is completed
+      performDelete();
+    }
+  };
+
+  const performDelete = () => {
     dispatch(taskAction.deleteTask({ id: props.id, priority: props.priority }));
     toast({
       title: "Task deleted.",
@@ -43,6 +66,7 @@ export const ShowTask = (props) => {
       duration: 2000,
       isClosable: true,
     });
+    onConfirmClose(); // Close the dialog after deletion
   };
 
   const saveHandler = () => {
@@ -235,6 +259,34 @@ export const ShowTask = (props) => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+
+      {/* AlertDialog for delete confirmation */}
+      <AlertDialog
+        isOpen={isConfirmOpen}
+        leastDestructiveRef={cancelRef}
+        onClose={onConfirmClose}
+      >
+        <AlertDialogOverlay>
+          <AlertDialogContent>
+            <AlertDialogHeader fontSize="lg" fontWeight="bold">
+              Confirm Deletion
+            </AlertDialogHeader>
+
+            <AlertDialogBody>
+              Are you sure you want to delete this task? This action cannot be undone.
+            </AlertDialogBody>
+
+            <AlertDialogFooter>
+              <Button ref={cancelRef} onClick={onConfirmClose}>
+                Cancel
+              </Button>
+              <Button colorScheme="red" onClick={performDelete} ml={3}>
+                Delete
+              </Button>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialogOverlay>
+      </AlertDialog>
     </>
   );
 };
